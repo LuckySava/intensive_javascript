@@ -43,6 +43,10 @@ window.addEventListener("DOMContentLoaded", function(){
 				cmsCheck.checked = false;
 			};
 
+			if (analiticsAdd.checked) {
+				analiticsAdd.checked = false;
+			};
+
 			total = land;
 			totalValue.value = total;
 	});
@@ -63,6 +67,10 @@ window.addEventListener("DOMContentLoaded", function(){
 			};
 			if (cmsCheck.checked) {
 				cmsCheck.checked = false;
+			};
+
+			if (analiticsAdd.checked) {
+				analiticsAdd.checked = false;
 			};
 
 			total = corp;
