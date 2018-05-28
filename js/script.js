@@ -12,6 +12,7 @@ let total = 3200,
 	changesCheck = document.getElementById("changes-check"),
 	cmsCheck = document.getElementById("changes-cms"),
 	totalValue = document.getElementById("total-value"),
+	analiticsAdd = document.getElementById("add-analitics"),
 	input = document.getElementsByTagName("input");
 
 
@@ -20,7 +21,8 @@ const 	land = 3200,
 		cms = 1750,
 		changes = 1000,
 		blocks = 350,
-		pages = 700;
+		pages = 700,
+		analitics = 300;
 
 window.addEventListener("DOMContentLoaded", function(){
 	tabLeft.addEventListener("click", () => {
@@ -120,6 +122,16 @@ window.addEventListener("DOMContentLoaded", function(){
 					totalValue.value = total;
 				} else {
 					total -= cms;
+					totalValue.value = total;
+				}
+			});
+
+			analiticsAdd.addEventListener("change", () => {
+				if (analiticsAdd.checked) {
+					total += analitics;
+					totalValue.value = total;
+				} else {
+					total -= analitics;
 					totalValue.value = total;
 				}
 			});
