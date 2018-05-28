@@ -17,10 +17,10 @@ let total = 3200,
 
 const 	land = 3200,
 		corp = 6000,
-		cms = 1500,
+		cms = 1750,
 		changes = 1000,
 		blocks = 350,
-		pages = 750;
+		pages = 700;
 
 window.addEventListener("DOMContentLoaded", function(){
 	tabLeft.addEventListener("click", () => {
@@ -71,14 +71,16 @@ window.addEventListener("DOMContentLoaded", function(){
 				counterHours.value = "";
 				counterRate.value = "";
 
-				totalValue.value = counterBlock.value * blocks;
+			      total = counterBlock.value * blocks;
+			      totalValue.value = Math.abs(total);
 			});
 
 			counterPages.addEventListener("change", () => {
 				counterHours.value = "";
 				counterRate.value = "";
 
-				totalValue.value = counterPages.value * pages;
+			      total = counterPages.value * pages;
+			      totalValue.value = Math.abs(total);
 			});
 
 			counterHours.addEventListener("change", () => {
@@ -86,23 +88,42 @@ window.addEventListener("DOMContentLoaded", function(){
 				counterBlock.value = "";
 
 				total = 0;
-				time = counterHours.value;
+				time = Math.abs(counterHours.value);
 				totalValue.value = time * counterRate.value;
+				total = hourRate;
 			});
 
 			counterRate.addEventListener("change", () => {
 				counterPages.value = "";
 				counterBlock.value = "";
 
-				totalValue.value = time * counterRate.value;
-
-
+			      total = 0;
+			      hourRate = time * Math.abs(counterRate.value);
+			      totalValue.value = hourRate;
+			      total = hourRate;
 
 			});
 
+			changesCheck.addEventListener("change", () => {
+				if (changesCheck.checked) {
+					total += changes;
+					totalValue.value = total;
+				} else {
+					total -= changes;
+					totalValue.value = total;
+				}
+			});
 
+			cmsCheck.addEventListener("change", () => {
+				if (cmsCheck.checked) {
+					total += cms;
+					totalValue.value = total;
+				} else {
+					total -= cms;
+					totalValue.value = total;
+				}
+			});
 });
 
 // Добавление логики 
  
-
